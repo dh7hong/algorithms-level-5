@@ -59,9 +59,11 @@ def solution(fees, records):
             if car_number in active_entries:
                 entry_time = active_entries.pop(car_number)  # Get entry time
                 if car_number in parking_times:
-                    parking_times[car_number] += (minutes - entry_time)  # Add to existing time
+                    parking_times[car_number] += (minutes - entry_time)  
+                    # Add to existing time
                 else:
-                    parking_times[car_number] = (minutes - entry_time)  # Initialize total time
+                    parking_times[car_number] = (minutes - entry_time)  
+                    # Initialize total time
 
     # Handle cars still parked at 23:59
     closing_time = time_to_minutes("23:59")
