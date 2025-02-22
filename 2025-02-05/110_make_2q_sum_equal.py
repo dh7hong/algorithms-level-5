@@ -20,7 +20,7 @@ def solution(queue1, queue2):
     count = 0  # Number of operations performed
     
     # Max operations allowed to avoid infinite loops (sum of both lengths * 2)
-    max_operations = len(q1) + len(q2) * 2
+    max_operations = (len(q1) + len(q2)) * 2
     
     # Two pointers
     i, j = 0, 0  # Start from both queues
