@@ -1,6 +1,12 @@
 def solution(N, road, K):
     # Step 1: Build the graph using an adjacency list
-    graph = {i: [] for i in range(1, N + 1)}
+    # Initialize an empty dictionary to represent the graph
+    graph = {}
+
+    # Iterate through numbers from 1 to N
+    for i in range(1, N + 1):
+        # Assign an empty list to each node in the graph
+        graph[i] = []
     
     for a, b, c in road:
         graph[a].append((b, c))
@@ -8,7 +14,14 @@ def solution(N, road, K):
     
     # Step 2: Initialize Dijkstra’s Algorithm
     INF = float('inf')  # Set a large value for infinity
-    min_time = {i: INF for i in range(1, N + 1)}
+    # Initialize a dictionary to store the minimum time for each node
+    min_time = {}
+
+    # Iterate through numbers from 1 to N
+    for i in range(1, N + 1):
+        # Set each node's initial time to INF (a large predefined value)
+        min_time[i] = INF
+    
     min_time[1] = 0  # The restaurant is at town 1, so its distance is 0
     
     visited = set()  # Keep track of visited towns

@@ -2,7 +2,7 @@ def is_safe(place):
     # Directions for checking adjacent and diagonal positions
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
     diagonals = [(-1, -1), (-1, 1), (1, -1), (1, 1)]
-    knights_moves = [(-2, 0), (2, 0), (0, -2), (0, 2)]
+    two_space_moves = [(-2, 0), (2, 0), (0, -2), (0, 2)]
     
     # Iterate through the 5x5 grid
     for r in range(5):
@@ -22,8 +22,8 @@ def is_safe(place):
                         if not (place[r][nc] == 'X' and place[nr][c] == 'X'):
                             return 0  # No partition, violation
                 
-                # Check two-space distance (knight's move)
-                for dr, dc in knights_moves:
+                # Check two-space distance moves
+                for dr, dc in two_space_moves:
                     nr, nc = r + dr, c + dc
                     if 0 <= nr < 5 and 0 <= nc < 5 and place[nr][nc] == 'P':
                         # Ensure the middle cell is an 'X' (partition)
