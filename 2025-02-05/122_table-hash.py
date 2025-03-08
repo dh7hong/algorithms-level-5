@@ -17,3 +17,4 @@ row_begin = 2
 row_end = 3
 
 print(solution(data, col, row_begin, row_end))  # Expected output: 4
+
